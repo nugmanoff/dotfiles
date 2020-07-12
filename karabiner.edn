@@ -1,0 +1,44 @@
+{
+    :templates 
+        {
+            :alfred "osascript -e 'tell application id \"com.runningwithcrayons.Alfred\" to run trigger \"%s\" in workflow \"%s\" with argument \"%s\"'"
+            :km "osascript -e 'tell application id \"com.stairways.keyboardmaestro.engine\" to do script \"%s\"'"
+        }
+    :simlayers 
+        {
+            :caps-mode {
+                :key :caps_lock
+            }
+        }
+    :main 
+        [
+            {
+                :des "open apps"
+                :rules 
+                [
+                    :caps-mode
+                    [:q [:km "open: telegram"]]
+                    [:a [:km "open: brave"]]
+                    [:s :!TOs] ; open wechsel (bluetootoh swicher)
+                    [:right_arrow :!TOright_arrow] ; magnet right split
+                    [:left_arrow :!TOleft_arrow] ; manget left split
+                    [:up_arrow :!TOup_arrow] ; magnet top split
+                    [:down_arrow :!TOdown_arrow] ; magnet bottom split
+                    [:spacebar :!TOspacebar] 
+                    [:return_or_enter :!TOreturn_or_enter] ; magnet maximize
+                ]
+            }
+            {
+                :des "search"
+                :rules [[[:j :i] [:alfred "search google" "net.deanishe.alfred-searchio"]]
+                        [[:j :o] [:alfred "search bear" "com.chrisbro.bear"]]]
+                        ; [[:j :i] [:alfred "search so" "net.deanishe.alfred-stackoverflow"]]
+                        ; [[:j :o] [:alfred "search folders" "nikivi.search.folders"]]]
+            }
+            {   :des "media"
+                :rules [[[:k :m] [:alfred "yandex play/pause" "nugmanoff.yandex.music" "playPause"]]
+                        [[:k :l] :!CTOSp] ; play/pause noizio
+                        [[:k :semicolon] :!CTOSh]] ; show noizio window
+            }
+        ]
+}
