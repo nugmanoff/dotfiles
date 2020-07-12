@@ -1,0 +1,40 @@
+[credential]
+	helper = osxkeychain
+[credential "https://github.com"]
+	username = nugmanoff
+[user]
+	name = Aidar Nugmanoff
+	email = a.nugmanoff@gmail.com
+	signingkey = 8CE6CDEAE6584FBC
+[alias]
+	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+[core]
+	excludesfile = /Users/Aidar/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/Aidar/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/Aidar/.stCommitMsg
+	gpgsign = true
+[push]
+	default = current
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[credential "https://gitlab.com"]
+	username = nugmanoff
