@@ -1,0 +1,86 @@
+{
+  "_from": "alfred-google-translate",
+  "_id": "alfred-google-translate@2.0.8",
+  "_inBundle": false,
+  "_integrity": "sha512-m1tpqNONiRK1QqZPwpFzr28RCi4oXaDw4CKkqxPVzjcy92SJ8c7QFcfcmahxCSmjaXwYfEoovWODeXdhAtIsGQ==",
+  "_location": "/alfred-google-translate",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "alfred-google-translate",
+    "name": "alfred-google-translate",
+    "escapedName": "alfred-google-translate",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/alfred-google-translate/-/alfred-google-translate-2.0.8.tgz",
+  "_shasum": "e71158c885e0e2df17463bd332b8bb6dc49759ed",
+  "_spec": "alfred-google-translate",
+  "_where": "/Users/wongiven",
+  "author": {
+    "name": "hanwen.huang",
+    "email": "xfslove@gmail.com",
+    "url": "https://github.com/xfslove/alfred-google-translate"
+  },
+  "bugs": {
+    "url": "https://github.com/xfslove/alfred-google-translate/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "alfy": "^0.9.0",
+    "configstore": "^2.0.0",
+    "got": "^6.3.0",
+    "uuid": "^3.3.2"
+  },
+  "deprecated": false,
+  "description": "Alfred 3 workflow to translate with google translate api",
+  "devDependencies": {
+    "alfy-test": "^0.3.0",
+    "ava": "*",
+    "codecov": "^1.0.1",
+    "coveralls": "^2.11.11",
+    "nyc": "^7.0.0",
+    "puppeteer": "^1.11.0",
+    "xo": "*"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "files": [
+    "tts.js",
+    "languages.js",
+    "translate.js",
+    "token.js",
+    "index.js",
+    "icon.png",
+    "tts.png",
+    "info.plist"
+  ],
+  "homepage": "https://github.com/xfslove/alfred-google-translate#readme",
+  "keywords": [
+    "translate",
+    "google-translate",
+    "alfred",
+    "alfred-workflow",
+    "workflow",
+    "alfy"
+  ],
+  "license": "MIT",
+  "name": "alfred-google-translate",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xfslove/alfred-google-translate.git"
+  },
+  "scripts": {
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup",
+    "test": "xo && ava"
+  },
+  "version": "2.0.8"
+}
