@@ -32,7 +32,7 @@ brew install thoughtbot/formulae/rcm
 brew install git
 
 # Clone dotfiles from Github
-# git clone --recursive https://github.com/anvilabs/dotfiles.git ~/.dotfiles
+# git clone --recursive https://github.com/nugmanoff/dotfiles.git ~/.dotfiles
  
 # Synchronize symlinks
 # rcup -v -d ~/.dotfiles/symlinks
@@ -62,7 +62,6 @@ source ~/.dotfiles/apps.sh
 brew cleanup
 
 # Set up GPG
-# https://anvilabs.co/blog/setup-gpg-commits/
 echo '** Settings up GPG with Keybase'
 keybase login
 keybase pgp gen
