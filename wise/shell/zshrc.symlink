@@ -1,0 +1,74 @@
+export DOTFILES=$HOME/.dotfiles
+SYSTEM_CONFIG=$DOTFILES/basic/system/index.zsh
+TIME_START=$(($(gdate +%s%N) / 1000000))
+
+local function compute_load_time () {
+  local START=$1
+  local END=$(($(gdate +%s%N) / 1000000))
+  if [[ $DOTFILES_DEBUG = "1" ]]; then
+    echo "$((END-START)) mili-seconds"
+  fi
+}
+
+# https://unix.stackexchange.com/a/151896/148053 - I don't understand, but it is what it is
+local function _source () {
+  local -r FILE="$1"
+  shift
+  source "$FILE" "$@"
+}
+
+local function source_local () {
+  if [[ -a $DOTFILES/.local ]]; then
+    _source $DOTFILES/.local
+  fi
+}
+
+local function source_system () {
+  _source "$SYSTEM_CONFIG"
+}
+
+function source_non_system () {
+  typeset -U FILES
+
+  FILES=($DOTFILES/basic/*/index.zsh $DOTFILES/specific/*/index.zsh)
+
+  for FILE in $FILES; do
+    if [ $FILE != $SYSTEM_CONFIG ]; then
+      _source $FILE
+    fi
+  done
+
+  unset FILES
+}
+
+function source_extensions () {
+  typeset -U FILES
+
+  if find $DOTFILES/extensions -name 'index.zsh' -not -path '*.git*' &> /dev/null; then
+    # include any extensions if present
+    FILES=($FILES $DOTFILES/extensions/*/*/index.zsh)
+  fi
+
+  for FILE in $FILES; do
+    if [ $FILE != $SYSTEM_CONFIG ]; then
+      _source $FILE
+    fi
+  done
+
+  unset FILES
+}
+
+source_local # load local-only variables (not commited)
+source_system # first source the system config, which sets critical variables...
+source_non_system # ...then sources other config files
+source_extensions
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+compute_load_time $TIME_START
+
+# TODO move to specific folder
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
