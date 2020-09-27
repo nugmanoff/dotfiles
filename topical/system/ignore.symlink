@@ -1,0 +1,9 @@
+# global ignore file for ag 
+# https://github.com/ggreer/the_silver_searcher/wiki/Advanced-Usage
+
+.git/
+/log
+/node_modules/
+/tmp/
+/vendor/
+tags
