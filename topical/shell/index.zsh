@@ -1,6 +1,3 @@
-######################################
-# config
-######################################
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
@@ -64,13 +61,18 @@ function title() {
 }
 
 ######################################
-# completion
+# zstyle
 ######################################
 # matches case insensitive for lowercase
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # pasting with tabs doesn't perform completion
 zstyle ':completion:*' insert-tab pending
+
+zstyle ':notify:*' success-title "Success!"
+zstyle ':notify:*' error-title "Error!"
+zstyle ':notify:*' error-icon "https://media3.giphy.com/media/10ECejNtM1GyRy/200_s.gif"
+zstyle ':notify:*' success-icon "https://s-media-cache-ak0.pinimg.com/564x/b5/5a/18/b55a1805f5650495a74202279036ecd2.jpg"
 
 ######################################
 # customizations

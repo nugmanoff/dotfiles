@@ -1,32 +1,56 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
+tap 'homebrew/cask-fonts'
 
-brew 'ack' # grep
-brew 'asdf' # https://github.com/asdf-vm/asdf
-brew 'bat' # cat
-brew 'coreutils' # https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities
-brew 'fd' # find
+brew 'git'
+brew 'coreutils' # gnu coreutils
+brew 'curl'
+brew 'wget'
+brew 'asciicinema'
+brew 'cocoapods'
+brew 'mas' # mac app store
+brew 'the_silver_searcher' # ack on steroids
+brew 'asdf' # version manager for everything
+brew 'bat' # cat on steroids
+brew 'tldr'
+brew 'neovim'
+brew 'gh'
+brew 'terminal-notifier'
+brew 'diff-so-fancy'
+brew 'wifi-password'
+brew 'tmux'
+brew 'exa'
+# npm install
+# pure install
+brew 'git-extras'
+brew 'fasd'
+brew 'fd'
+brew 'yqrashawn/goku/goku'
 brew 'fzf' # fuzzy finder
 brew 'gpg'
 brew 'gpg2'
-brew 'imagemagick'
 brew 'jq' # json query
-brew 'kubectl' # https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-with-homebrew-on-macos
-brew 'libgit2'
-brew 'openssl'
 brew 'readline'
-brew 'switchaudio-osx'
 brew 'watchman'
-brew 'wget'
 brew 'yq' # like jq, for yaml
 brew 'zsh-syntax-highlighting'
-brew 'zsh'
 
-cask 'docker'
-cask 'google-chrome'
+cask 'brave-browser'
+cask '1password'
+cask 'dozer'
+cask 'hazeover'
 cask 'iterm2'
-cask 'macmediakeyforwarder'
-cask 'spectacle'
-cask 'spotify'
 cask 'visual-studio-code'
+cask 'qlcolorcode'
+cask 'quicklook-json'
+cask 'font-jetbrains-mono-nerd-font'
+cask 'font-source-code-pro'
+
+# Move to separate file & needs to be signed in to app store before hand 
+
+# mas install magnet
+# mas install mindnode
+# mas install coderunner
+# mas install noizio
+# mas install bear

@@ -90,29 +90,6 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.oh-my-zsh/custom/plugins/notify/notify.plugin.zsh
 
-zstyle ':notify:*' success-title "Success!"
-zstyle ':notify:*' error-title "Error!"
-zstyle ':notify:*' error-icon "https://media3.giphy.com/media/10ECejNtM1GyRy/200_s.gif"
-zstyle ':notify:*' success-icon "https://s-media-cache-ak0.pinimg.com/564x/b5/5a/18/b55a1805f5650495a74202279036ecd2.jpg"
-
-alias zf="nvim ~/.zshrc"
-alias vf="nvim ~/.config/nvim/init.vim" 
-alias rl="source ~/.zshrc"
-alias ip="curl ipinfo.io/ip"
-alias j="fasd_cd -d"
-alias ow="find *.xcworkspace | head -n 1 | xargs open"
-alias edit="$EDITOR"
-alias e="$EDITOR"
-alias run="./Taskfile"
-alias lt="exa -las type"
-alias ddc="rm -rf ~/Library/Developer/Xcode/DerivedData"
-
-# git aliases, apart from git-extras and ohmyzsh git plugin
-alias gg="git log --oneline --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gds="git diff --staged"
-alias grs="git restore --staged"
-# alias gclp="cd $(pbpaste | xargs -I repo bash -c 'git clone repo  && basename repo .git')"
-
 # Pure Activtation 
 autoload -U promptinit; promptinit
 PURE_PROMPT_SYMBOL=λ
