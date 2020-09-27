@@ -1,7 +1,7 @@
 export ZSH=~/.oh-my-zsh
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
-DEFAULT_USER=$(whoami)
+ZSH_THEME=""
+DEFAULT_USER="nugmanoff"
 
 plugins=(docker git z)
 

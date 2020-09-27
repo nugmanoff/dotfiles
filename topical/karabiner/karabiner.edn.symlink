@@ -19,7 +19,6 @@
                     :caps-mode
                     [:q [:km "open: telegram"]]
                     [:a [:km "open: brave"]]
-                    [:s :!TOs] ; open wechsel (bluetootoh swicher)
                     [:right_arrow :!TOright_arrow] ; magnet right split
                     [:left_arrow :!TOleft_arrow] ; manget left split
                     [:up_arrow :!TOup_arrow] ; magnet top split

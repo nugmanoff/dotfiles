@@ -56,5 +56,3 @@ set cursorline
 set termguicolors
 
 map <C-n> :NERDTreeToggle<CR>
-
-

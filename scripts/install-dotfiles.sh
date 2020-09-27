@@ -23,25 +23,6 @@ fail () {
   exit
 }
 
-setup_gitconfig () {
-  if ! [ -f specific/git/gitconfig-local.symlink ]; then
-    info 'setup gitconfig'
-
-    user ' - What is your github author name?'
-    read -r -e git_authorname
-    user ' - What is your github author email?'
-    read -r -e git_authoremail
-
-    sed \
-      -e "s/AUTHORNAME/$git_authorname/g" \
-      -e "s/AUTHOREMAIL/$git_authoremail/g" \
-      specific/git/gitconfig-local.symlink.example > specific/git/gitconfig-local.symlink
-
-    success 'gitconfig'
-  fi
-}
-
-
 link_file () {
   local SRC=$1 DST=$2
 
@@ -111,13 +92,15 @@ install_dotfiles () {
   local overwrite_all=false backup_all=false skip_all=false
 
   # shellcheck disable=SC2044
-  for SRC in $(find -H "$DOTFILES" -maxdepth 4 -name '*.symlink' -not -path '*.git*'); do
+  for SRC in $(find -H ~/dotfiles/ -maxdepth 4 -name '*.symlink' -not -path '*.git*' -not -path '*vim*' -not -path '*karabiner*'); do
+    # `%.*` part deletes symlink extension from SRC
     DST="$HOME/.$(basename "${SRC%.*}")"
     link_file "$SRC" "$DST"
   done
 }
 
-setup_gitconfig
+link_file "~/dotfiles/topical/nvim/init.vim.symlink" "$HOME/.config/nvim/init.vim"
+link_file "~/dotfiles/topical/karabiner/karabiner.edn.symlink" "$HOME/.config/karabiner.edn"
 install_dotfiles
 
 info "installing dependencies"
