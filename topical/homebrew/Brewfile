@@ -21,8 +21,6 @@ brew 'diff-so-fancy'
 brew 'wifi-password'
 brew 'tmux'
 brew 'exa'
-# npm install
-# pure install
 brew 'git-extras'
 brew 'fasd'
 brew 'fd'

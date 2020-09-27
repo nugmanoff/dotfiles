@@ -1,13 +1,8 @@
 export DOTFILES=$HOME/.dotfiles
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/Users/Aidar/Scripts:$PATH
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export PATH="$HOME/.fastlane/bin:$PATH"
 export EDITOR=/usr/local/bin/nvim
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/Aidar/.oh-my-zsh
@@ -91,7 +86,8 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.oh-my-zsh/custom/plugins/notify/notify.plugin.zsh
 
 # Pure Activtation 
-autoload -U promptinit; promptinit
+autoload -U promptinit
+promptinit
 PURE_PROMPT_SYMBOL=λ
 prompt pure
 
@@ -99,9 +95,3 @@ prompt pure
 
 autoload -U compinit
 compinit -u
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(fasd --init auto)"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
