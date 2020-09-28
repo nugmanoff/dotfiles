@@ -3,6 +3,12 @@
 Bootstrapping process and installation is heavily inspired by [@rafaelyeng's dotfiles](https://github.com/rafaeleyng/dotfiles/), which are in turn inspired by [@holman's dotifles](https://github.com/holman/dotfiles) (recursion :yay:).
 Configuration tweaks, aliases and functions are gathered from various sources with my own modifications on top.
 
+# Install
+```shell
+git clone https://github.com/nugmanoff/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+scripts/install-dotfiles.sh
+```
 # Rahmet
 
 - [@holman's dotifles](https://github.com/holman/dotfiles)
