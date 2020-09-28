@@ -20,15 +20,5 @@ alias gg="git log --oneline --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 alias gds="git diff --staged"
 alias grs="git restore --staged"
 # alias gclp="cd $(pbpaste | xargs -I repo bash -c 'git clone repo  && basename repo .git')"
-
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias preview="fzf --preview 'bat --color \"always\" {}'"
-# add support for ctrl+o to open selected file in the default text editor
-export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 
-# make completions work for asdf
-. $(brew --prefix asdf)/asdf.sh
-
-# fasd init
-eval "$(fasd --init auto)"

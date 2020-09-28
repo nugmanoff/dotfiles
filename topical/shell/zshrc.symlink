@@ -75,15 +75,13 @@ plugins=(
   notify
   alias-tips
   colored-man-pages
+  zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
 
 DEFAULT_USER='nugmanoff'
-
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.oh-my-zsh/custom/plugins/notify/notify.plugin.zsh
 
 # Pure Activtation 
 autoload -U promptinit

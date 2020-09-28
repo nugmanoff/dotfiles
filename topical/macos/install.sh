@@ -9,3 +9,11 @@ softwareupdate -i -a
 
 # shellcheck disable=SC1090
 source "${BASH_SOURCE%/*}"/set-defaults.sh
+
+# needs to be signed in to Mac App Store vefore running these
+
+mas install magnet
+mas install mindnode
+mas install coderunner
+mas install noizio
+mas install bear

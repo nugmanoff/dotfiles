@@ -7,6 +7,7 @@ brew 'git'
 brew 'coreutils' # gnu coreutils
 brew 'curl'
 brew 'wget'
+
 brew 'asciicinema'
 brew 'cocoapods'
 brew 'mas' # mac app store
@@ -32,7 +33,6 @@ brew 'jq' # json query
 brew 'readline'
 brew 'watchman'
 brew 'yq' # like jq, for yaml
-brew 'zsh-syntax-highlighting'
 
 cask 'brave-browser'
 cask '1password'
@@ -44,11 +44,3 @@ cask 'qlcolorcode'
 cask 'quicklook-json'
 cask 'font-jetbrains-mono-nerd-font'
 cask 'font-source-code-pro'
-
-# Move to separate file & needs to be signed in to app store before hand 
-
-# mas install magnet
-# mas install mindnode
-# mas install coderunner
-# mas install noizio
-# mas install bear

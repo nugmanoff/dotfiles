@@ -1,7 +1,11 @@
 #!/bin/bash
 #
 # run all dotfiles installers
-export DOTFILES="$HOME/.dotfiles"
+export DOTFILES="$HOME/dotfiles"
 
 cd "$(dirname "$0")"/.. || exit
-find -H "$DOTFILES" -maxdepth 4 -name 'install.sh' -not -path '*.git*' -exec sh -c 'FILE="$1"; "$FILE"' _ {} \;
+
+steps_order=( homebrew oh-my-zsh langenv nvim macos )
+for step in "${steps_order[@]}"; do
+    sh "$DOTFILES/topical/$step/install.sh"
+done
