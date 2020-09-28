@@ -3,71 +3,20 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=/usr/local/bin/nvim
+export PATH="./bin:/usr/local/bin:/usr/local/sbin:$DOTFILES/basic/bin:~/bin:$PATH"
+export ZSH=~/.oh-my-zsh
 
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/Aidar/.oh-my-zsh
-
-SYSTEM_CONFIG=$DOTFILES/basic/system/index.zsh
-
-local function _source () {
-  local -r FILE="$1"
-  shift
-  source "$FILE" "$@"
-}
-
-local function source_local () {
-  if [[ -a $DOTFILES/.local ]]; then
-    _source $DOTFILES/.local
-  fi
-}
-
-local function source_system () {
-  _source "$SYSTEM_CONFIG"
-}
-
-function source_non_system () {
-  typeset -U FILES
-
-  FILES=($DOTFILES/basic/*/index.zsh $DOTFILES/specific/*/index.zsh)
-
-  for FILE in $FILES; do
-    if [ $FILE != $SYSTEM_CONFIG ]; then
-      _source $FILE
-    fi
-  done
-
-  unset FILES
-}
-
-function source_extensions () {
-  typeset -U FILES
-
-  if find $DOTFILES/extensions -name 'index.zsh' -not -path '*.git*' &> /dev/null; then
-    # include any extensions if present
-    FILES=($FILES $DOTFILES/extensions/*/*/index.zsh)
-  fi
-
-  for FILE in $FILES; do
-    if [ $FILE != $SYSTEM_CONFIG ]; then
-      _source $FILE
-    fi
-  done
-
-  unset FILES
-}
-
-source_local # load local-only variables (not commited)
-source_system # first source the system config, which sets critical variables...
-source_non_system # ...then sources other config files
-source_extensions
+fpath=($DOTFILES/basic/functions $fpath)
+autoload -U $DOTFILES/basic/functions/*(
+  
+fpath+=$HOME/.zsh/pure:t)
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
 
-#### MY DOTIFLES BELOW
-
 ZSH_THEME=""
+DEFAULT_USER="nugmanoff"
 
 plugins=(
   git
@@ -81,15 +30,52 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-DEFAULT_USER='nugmanoff'
-
 # Pure Activtation 
 autoload -U promptinit
 promptinit
 PURE_PROMPT_SYMBOL=λ
 prompt pure
 
-# Carthage zsh completion
+# don't expand aliases _before_ completion has finished
+#   like: git comm-[tab]
+setopt complete_aliases
 
-autoload -U compinit
-compinit -u
+bindkey '^[^[[D' backward-word
+bindkey '^[^[[C' forward-word
+bindkey '^[[5D' beginning-of-line
+bindkey '^[[5C' end-of-line
+bindkey '^[[3~' delete-char
+bindkey '^?' backward-delete-char
+
+# matches case insensitive for lowercase
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# pasting with tabs doesn't perform completion
+zstyle ':completion:*' insert-tab pending
+
+# zsh-notify plugins customization
+zstyle ':notify:*' success-title "Success!"
+zstyle ':notify:*' error-title "Error!"
+zstyle ':notify:*' error-icon "https://media3.giphy.com/media/10ECejNtM1GyRy/200_s.gif"
+zstyle ':notify:*' success-icon "https://s-media-cache-ak0.pinimg.com/564x/b5/5a/18/b55a1805f5650495a74202279036ecd2.jpg"
+
+# aliases
+
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'" # copy public key to clipboard
+alias zf="nvim ~/.zshrc"
+alias vf="nvim ~/.config/nvim/init.vim" 
+alias rl="source ~/.zshrc"
+alias j="fasd_cd -d"
+alias ow="find *.xcworkspace | head -n 1 | xargs open"
+alias edit="$EDITOR"
+alias e="$EDITOR"
+alias run="./Taskfile"
+alias lt="exa -las type"
+alias ddc="rm -rf ~/Library/Developer/Xcode/DerivedData"
+alias ag="ag —path-to-ignore ~/.ignore"
+# git aliases, apart from git-extras and ohmyzsh git plugin
+alias gg="git log --oneline --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gds="git diff --staged"
+alias grs="git restore --staged"
+# alias gclp="cd $(pbpaste | xargs -I repo bash -c 'git clone repo  && basename repo .git')"
+alias preview="fzf --preview 'bat --color \"always\" {}'"

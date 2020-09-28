@@ -2,11 +2,10 @@
 
 export ZSH=~/.oh-my-zsh
 
-# install zsh
+# install oh-my-zsh
 if [ ! -d $ZSH ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
-
 
 # install pure-prompt
 if test "$(command -v npm)"; then

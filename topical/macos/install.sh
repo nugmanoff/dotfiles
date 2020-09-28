@@ -5,10 +5,9 @@
 # command line interface to it that we can use to just install everything, so
 # yeah, let's do that.
 
-softwareupdate -i -a
+# softwareupdate -i -a
 
-# shellcheck disable=SC1090
-source "${BASH_SOURCE%/*}"/set-defaults.sh
+# source "${BASH_SOURCE%/*}"/set-defaults.sh
 
 # needs to be signed in to Mac App Store vefore running these
 
