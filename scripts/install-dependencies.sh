@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # run all dotfiles installers
-export DOTFILES="$HOME/dotfiles"
+export DOTFILES="$HOME/.dotfiles"
 
 cd "$(dirname "$0")"/.. || exit
 
