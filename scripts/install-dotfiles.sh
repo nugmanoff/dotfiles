@@ -100,8 +100,8 @@ install_dotfiles () {
 }
 
 mkdir -p "$HOME/.config/nvim"
-link_file "~/.dotfiles/topical/nvim/init.vim.symlink" "$HOME/.config/nvim/init.vim"
-link_file "~/.dotfiles/topical/karabiner/karabiner.edn.symlink" "$HOME/.config/karabiner.edn"
+link_file "$HOME/.dotfiles/topical/nvim/init.vim.symlink" "$HOME/.config/nvim/init.vim"
+link_file "$HOME/.dotfiles/topical/karabiner/karabiner.edn.symlink" "$HOME/.config/karabiner.edn"
 install_dotfiles
 
 info "installing dependencies"

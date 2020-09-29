@@ -11,8 +11,8 @@
 
 # needs to be signed in to Mac App Store vefore running these
 
-mas install magnet
-mas install mindnode
-mas install coderunner
-mas install noizio
-mas install bear
+mas install 441258766 # magnet
+mas install 1289197285 # mindnode
+mas install 955297617 # coderunner
+mas install 928871589 # noizio
+mas install 1091189122 # bear

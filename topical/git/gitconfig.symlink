@@ -31,3 +31,5 @@
 	whitespace = red reverse
 [credential "https://gitlab.com"]
 	username = nugmanoff
+[gpg]
+	program = gpg
