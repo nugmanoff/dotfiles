@@ -92,19 +92,20 @@ install_dotfiles () {
   local overwrite_all=false backup_all=false skip_all=false
 
   # shellcheck disable=SC2044
-  for SRC in $(find -H ~/dotfiles/ -maxdepth 4 -name '*.symlink' -not -path '*.git*' -not -path '*vim*' -not -path '*karabiner*'); do
+  for SRC in $(find -H ~/.dotfiles/ -maxdepth 4 -name '*.symlink' -not -path '*.git*' -not -path '*vim*' -not -path '*karabiner*'); do
     # `%.*` part deletes symlink extension from SRC
     DST="$HOME/.$(basename "${SRC%.*}")"
     link_file "$SRC" "$DST"
   done
 }
 
-link_file "~/dotfiles/topical/nvim/init.vim.symlink" "$HOME/.config/nvim/init.vim"
-link_file "~/dotfiles/topical/karabiner/karabiner.edn.symlink" "$HOME/.config/karabiner.edn"
+mkdir -p "$HOME/.config/nvim"
+link_file "~/.dotfiles/topical/nvim/init.vim.symlink" "$HOME/.config/nvim/init.vim"
+link_file "~/.dotfiles/topical/karabiner/karabiner.edn.symlink" "$HOME/.config/karabiner.edn"
 install_dotfiles
 
 info "installing dependencies"
-if source scripts/dependencies-install.sh
+if source scripts/install-dependencies.sh
 then
   success "dependencies installed"
 else

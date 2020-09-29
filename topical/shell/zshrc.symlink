@@ -6,10 +6,11 @@ export EDITOR=/usr/local/bin/nvim
 export PATH="./bin:/usr/local/bin:/usr/local/sbin:$DOTFILES/basic/bin:~/bin:$PATH"
 export ZSH=~/.oh-my-zsh
 
-fpath=($DOTFILES/basic/functions $fpath)
-autoload -U $DOTFILES/basic/functions/*(
+# uncomment when add functions
+# fpath=($DOTFILES/basic/functions $fpath)
+# autoload -U $DOTFILES/basic/functions/*(:t)
   
-fpath+=$HOME/.zsh/pure:t)
+fpath+=$HOME/.zsh/pure
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
@@ -46,6 +47,18 @@ bindkey '^[[5D' beginning-of-line
 bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^?' backward-delete-char
+
+# configure fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# add support for ctrl+o to open selected file in the default text editor
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
+
+# make completions work for asdf
+. $(brew --prefix asdf)/asdf.sh
+
+# fasd init
+eval "$(fasd --init auto)"
 
 # matches case insensitive for lowercase
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
