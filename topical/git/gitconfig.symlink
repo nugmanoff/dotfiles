@@ -1,11 +1,9 @@
+[include]
+  path = ~/.gitconfig-local
 [credential]
 	helper = osxkeychain
 [credential "https://github.com"]
 	username = nugmanoff
-[user]
-	name = Aidar Nugmanoff
-	email = a.nugmanoff@gmail.com
-	signingkey = B932AEBEA8FC5760
 [alias]
 	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 [core]
