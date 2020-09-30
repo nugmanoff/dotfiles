@@ -85,7 +85,7 @@ alias e="$EDITOR"
 alias run="./Taskfile"
 alias lt="exa -las type"
 alias ddc="rm -rf ~/Library/Developer/Xcode/DerivedData"
-alias ag="ag —path-to-ignore ~/.ignore"
+# alias ag="ag —p $HOME/.ignore"
 # git aliases, apart from git-extras and ohmyzsh git plugin
 alias gg="git log --oneline --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gds="git diff --staged"

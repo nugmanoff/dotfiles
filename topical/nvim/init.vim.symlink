@@ -5,6 +5,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
