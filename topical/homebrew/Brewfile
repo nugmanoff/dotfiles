@@ -24,6 +24,7 @@ brew 'exa'
 brew 'git-extras'
 brew 'fasd'
 brew 'fd'
+brew 'delta'
 brew 'fzf' # fuzzy finder
 brew 'gpg'
 brew 'gpg2'
