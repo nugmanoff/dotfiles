@@ -27,5 +27,8 @@ git clone https://github.com/marzocchi/zsh-notify.git ${ZSH_CUSTOM:-$ZSH/custom}
 # install alias-tips
 git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM:-$ZSH/custom}/plugins/alias-tips
 
+# install git fuzzy
+git clone https://github.com/bigH/git-fuzzy.git ${ZSH_CUSTOM:-$ZSH/custom}/git-fuzzy
+
 # install fzf compleetions
 $(brew --prefix)/opt/fzf/install

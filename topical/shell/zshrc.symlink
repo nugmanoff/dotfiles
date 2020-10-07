@@ -54,6 +54,9 @@ bindkey '^?' backward-delete-char
 # add support for ctrl+o to open selected file in the default text editor
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 
+# configure git fuzzy
+export PATH=$ZSH/custom/git-fuzzy/bin:$PATH
+
 # make completions work for asdf
 . $(brew --prefix asdf)/asdf.sh
 
