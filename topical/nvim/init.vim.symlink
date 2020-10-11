@@ -11,7 +11,9 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'json', 'markdown', 'yaml', 'html'] }
 Plug 'joshdick/onedark.vim'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -33,6 +35,7 @@ endif
 
 syntax on
 colorscheme onedark
+set guifont=JetBrainsMonoNerdFontComplete-Regular:h20
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -61,6 +64,7 @@ inoremap jk <ESC>
 let mapleader = " "
 let g:NERDSpaceDelims = 2
 set clipboard=unnamedplus
+let g:airline_powerline_fonts = 1
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
