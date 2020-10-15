@@ -92,6 +92,7 @@ alias ddc="rm -rf ~/Library/Developer/Xcode/DerivedData"
 # git aliases, apart from git-extras and ohmyzsh git plugin
 alias gg="git log --oneline --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gds="git diff --staged"
-alias grs="git restore --staged"
+alias grs="git restore --staged ."
+alias gr="git reset HEAD && git checkout ."
 # alias gclp="cd $(pbpaste | xargs -I repo bash -c 'git clone repo  && basename repo .git')"
 alias preview="fzf --preview 'bat --color \"always\" {}'"
