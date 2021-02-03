@@ -96,3 +96,5 @@ alias grs="git restore --staged ."
 alias gr="git reset HEAD && git checkout ."
 # alias gclp="cd $(pbpaste | xargs -I repo bash -c 'git clone repo  && basename repo .git')"
 alias preview="fzf --preview 'bat --color \"always\" {}'"
+
+alias kt="cd /Users/nugmanoff/workspace/kaztelecom-ios && ow"

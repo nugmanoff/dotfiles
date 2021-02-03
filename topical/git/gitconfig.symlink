@@ -35,3 +35,6 @@
 	username = nugmanoff
 [gpg]
 	program = gpg
+[pull]
+	rebase = true
+	default = current
